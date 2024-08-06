@@ -28,3 +28,8 @@ export default {
     name: "NavBar",
 };
 </script>
+<style scoped>
+nav{
+    background-color: #8686e3 !important;
+}
+</style>

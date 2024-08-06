@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-
+backend/pyy/crow/
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -23,4 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 frontend\node_modules
-backend\pyy\crow
