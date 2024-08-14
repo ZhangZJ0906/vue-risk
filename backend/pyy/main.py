@@ -46,12 +46,12 @@ def main():
     
     #==========================抓所有table資料並轉成json並過濾autono===
     question=fetch_and_clean_data()
-    OPENAI_API_KEY=os.environ["OPENAI_API_KEY"]
-    # print(question)     #測試 是否有把json傳入
+    # OPENAI_API_KEY=os.environ["OPENAI_API_KEY"]
+    print(question)     #測試 是否有把json傳入
     #==============================================================
   
     #=========================把json丟給openai問他問題==============
-    fetch_openai_response(OPENAI_API_KEY,question)
+    # fetch_openai_response(OPENAI_API_KEY,question)
     # print(fetch_openai_response(OPENAI_API_KEY,question))
     #==============================================================
 if __name__ == '__main__':

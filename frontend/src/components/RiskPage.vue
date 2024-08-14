@@ -1,16 +1,15 @@
 <template>
-
-    <h1 class="text-center my-5" >RISK</h1>
+    <h1 class="text-center my-5">RISK</h1>
     <p>&nbsp;</p>
-    
+
     <div class="container">
-        <div class="row  justify-content-center my-5">
+        <div class="row justify-content-center my-5">
             <div class="col-12">
-                <form action="/backend/api.php" method="post">
-                    <input class="in" type="text" id="company" name="company" placeholder="請輸入公司名稱" />
+                <form @submit.prevent="submitForm">
+                    <input class="in" type="text" v-model="company" name="company" placeholder="請輸入公司名稱" />
                     <br />
-                    <input class="in" type="number" id="Compiled" name="Compiled" placeholder="請輸入公司統編" />
-                    <button type="submit" class="btn btn-primary btn-lg submit-btn ">送出</button>
+                    <input class="in" type="number" v-model="compiled" name="compiled" placeholder="請輸入公司統編" />
+                    <button type="submit" class="btn btn-primary btn-lg submit-btn">送出</button>
                 </form>
                 <p>
                     投資乃一場挑戰，充滿著不確定性與變數，無處不在的風險像影子一樣伴隨您。在您追求財務目標之際，請謹慎而深思熟慮地前進，絕對不要掉以輕心。過分自信與尋求高回報的渴望可能成為您前進道路上的魔咒，導致潛在的損失。為了降低風險，請確保您充分了解您的投資目標、風險承受能力和投資時間範圍，以制定適合您的策略。
@@ -19,11 +18,57 @@
                 </p>
             </div>
         </div>
+        <div v-if="message" class="alert alert-info mt-3">{{ message }}</div>
     </div>
 </template>
+
 <script>
+import axios from 'axios';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
 export default {
     name: "RiskPage",
-};
+    
+    setup() {
+        const router = useRouter();
+        const company = ref('');
+        const compiled = ref('');
+        const message = ref('');
+
+        const submitForm = async () => {
+            try {
+                const response = await axios.post('http://localhost/STU-Topics/backend/api.php', {
+                    company: company.value,
+                    compiled: compiled.value
+                }, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                message.value = response.data.message;
+
+                if (response.data.message.includes('數據插入成功')) {
+                    // 跳转到加载页面
+                    router.push({ name: 'loadingPage' });
+                    
+
+                }
+            } catch (error) {
+                message.value = '提交失败，请重试。';
+                console.error(error);
+            }
+        };
+
+        return {
+            
+            company,
+            compiled,
+            message,
+            submitForm
+        };
+    }
+}
 </script>
+
 <style scoped src="../styles/style.css"></style>
