@@ -47,7 +47,7 @@ def fetch_openai_response(api_key, question):
 
 #=============================================================================
 
-# print(fetch_openai_response('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','你好')) test用
+# print(fetch_openai_response("your openai api key",'你好')) test用
 
 
 
