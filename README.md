@@ -8,6 +8,7 @@
 ### 去撈資料庫資料來爬取使用者輸入的公司資訊
 
 ## 使用XAMPP 及mysql
+### 資料庫設定請根據php以及Python 的sql語法去設定
 
 ### 若想要啟用AI去做評分需去改動main.py裡面的api key 。
 ### 把fetch_openai_response(OPENAI_API_KEY,question)這行註解給刪掉，以及把php 裡面全部的data.json換成respon.json
