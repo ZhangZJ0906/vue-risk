@@ -40,7 +40,7 @@ def fetch_openai_response(api_key, question):
         "response": respon
     }
     # print(respon)
-    with open (r'C:\xampp\htdocs\STU-Topics\backend\respon.json', 'w', encoding='utf-8') as f: #json 更換檔案儲存位置
+    with open (r'C:\xampp\htdocs\STU-Topics\backend\fetch_openai_response(OPENAI_API_KEY,question)', 'w', encoding='utf-8') as f: #json 更換檔案儲存位置
         json.dump(response_json, f, ensure_ascii=False, indent=4)
 
     return respon

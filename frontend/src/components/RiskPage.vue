@@ -1,4 +1,5 @@
 <template>
+    <NavBar/>
     <h1 class="text-center my-5">RISK</h1>
     <p>&nbsp;</p>
 

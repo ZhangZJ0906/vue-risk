@@ -87,3 +87,60 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+/* 整體容器樣式 */
+div {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 標題樣式 */
+h1 {
+    font-size: 32px;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #495057;
+    border-bottom: 2px solid #6c757d;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* 文字樣式 */
+p {
+    font-size: 18px;
+    color: #212529;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* 特殊文字著重顯示 */
+p span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* 鍵值對顯示 */
+p::before {
+    content: "• ";
+    color: #007bff;
+    font-weight: bold;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+</style>
