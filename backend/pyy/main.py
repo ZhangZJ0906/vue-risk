@@ -10,7 +10,7 @@ import os
 import time
 
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "your api key"
 
 
 def main():
